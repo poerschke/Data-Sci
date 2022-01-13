@@ -198,7 +198,7 @@ for lesson, lessonData in lessons.items():
         create_directory(f"./{lesson}")
     for lessonName, link in lessonData.items():
         if not os.path.exists(f"./{lesson}/{lessonName}.mp4"):
-            print(f"[+] Acessing {link}")
+            print(f"\n[+] Acessing {link}")
             r = requests.get(link, headers=headers, allow_redirects=True)
             html = r.content.decode('utf-8')
             link_mp4 = parser(html)
