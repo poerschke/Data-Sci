@@ -203,4 +203,4 @@ for lesson, lessonData in lessons.items():
             html = r.content.decode('utf-8')
             link_mp4 = parser(html)
             download(link_mp4, f"./{lesson}/{lessonName}")
-            print(f"[+] File saved in {x}.mp4")
+
