@@ -202,7 +202,7 @@ for lesson, lessonData in lessons.items():
         create_directory(f"./{lesson}")
     for lessonName, link in lessonData.items():
         if not os.path.exists(f"./{lesson}/{lessonName}.mp4"):
-            print(f"\n[+] Acessing {link}")
+            print(f"\n[+] Accessing {link}")
             try:
                 r = requests.get(link, headers=headers, allow_redirects=True)
             except ConnectionError:
