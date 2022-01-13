@@ -1,3 +1,4 @@
+from logging import exception
 import requests
 import re
 import sys
@@ -177,19 +178,22 @@ def download(link, x):
     file_name = f"{x}.mp4"
     with open(file_name, "wb") as f:
         print("Downloading %s" % file_name)
-        response = requests.get(link, stream=True)
-        total_length = response.headers.get('content-length')
-        if total_length is None: # no content length header
-            f.write(response.content)
-        else:
-            dl = 0
-            total_length = int(total_length)
-            for data in response.iter_content(chunk_size=4096):
-                dl += len(data)
-                f.write(data)
-                done = int(50 * dl / total_length)
-                sys.stdout.write("\r[%s%s]" % ('=' * done, ' ' * (50-done)) )    
-                sys.stdout.flush()
+        try:
+            response = requests.get(link, stream=True)
+            total_length = response.headers.get('content-length')
+            if total_length is None: # no content length header
+                f.write(response.content)
+            else:
+                dl = 0
+                total_length = int(total_length)
+                for data in response.iter_content(chunk_size=4096):
+                    dl += len(data)
+                    f.write(data)
+                    done = int(50 * dl / total_length)
+                    sys.stdout.write("\r[%s%s]" % ('=' * done, ' ' * (50-done)) )    
+                    sys.stdout.flush()
+        except ConnectionError:
+            print("\n[-] Não conectou ao site, verifique a conexão e execute o script novamente")
 
 
 for lesson, lessonData in lessons.items():
@@ -199,8 +203,11 @@ for lesson, lessonData in lessons.items():
     for lessonName, link in lessonData.items():
         if not os.path.exists(f"./{lesson}/{lessonName}.mp4"):
             print(f"\n[+] Acessing {link}")
-            r = requests.get(link, headers=headers, allow_redirects=True)
+            try:
+                r = requests.get(link, headers=headers, allow_redirects=True)
+            except ConnectionError:
+                print("\n[-] Não conectou ao site, verifique a conexão e execute o script novamente")
+
             html = r.content.decode('utf-8')
             link_mp4 = parser(html)
             download(link_mp4, f"./{lesson}/{lessonName}")
-
