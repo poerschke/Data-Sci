@@ -154,7 +154,7 @@ lessons = {
         }
 
 
-
+headers = {'Referer': 'https://salavirtual.pucrs.br/'}
 
 
 
@@ -166,13 +166,25 @@ def create_directory(dirName):
     except FileExistsError:
         print("[-] Directory " , dirName ,  " already exists")  
 
-headers = {'Referer': 'https://salavirtual.pucrs.br/'}
 
-def parser(input):
-    regex = r"\"profile\":\".+\",\"width\":1920,\"mime\":\"video\/mp4\",\"fps\":.+,\"url\":\"(.+?)\",\"cdn\":\"akamai_interconnect\",\"quality\":\"1080p\",\"id\":\".+\",\"origin\":\"gcs\",\"height\":1080"
-    matches = re.finditer(regex, input)
+
+
+
+
+def parser(input, option):
+    regex = [
+            r"\"profile\":\".+\",\"width\":1920,\"mime\":\"video\/mp4\",\"fps\":.+,\"url\":\"(.+?)\",\"cdn\":\"akamai_interconnect\",\"quality\":\"1080p\",\"id\":\".+\",\"origin\":\"gcs\",\"height\":1080",
+            r"\"profile\":\".+\",\"width\":1280,\"mime\":\"video\/mp4\",\"fps\":.+,\"url\":\"(.+?)\",\"cdn\":\"akamai_interconnect\",\"quality\":\"720p\",\"id\":\".+\",\"origin\":\"gcs\",\"height\":720",
+            r"\"profile\":\".+\",\"width\":960,\"mime\":\"video\/mp4\",\"fps\":.+,\"url\":\"(.+?)\",\"cdn\":\"akamai_interconnect\",\"quality\":\"540p\",\"id\":\".+\",\"origin\":\"gcs\",\"height\":540",
+            r"\"profile\":\".+\",\"width\":640,\"mime\":\"video\/mp4\",\"fps\":.+,\"url\":\"(.+?)\",\"cdn\":\"akamai_interconnect\",\"quality\":\"360p\",\"id\":\".+\",\"origin\":\"gcs\",\"height\":360"
+    ]
+    matches = re.finditer(regex[option], input)
     for matchNum, match in enumerate(matches, start=0):
         return match.group(1)
+
+
+
+
 
 def download(link, x):
     file_name = f"{x}.mp4"
@@ -181,7 +193,7 @@ def download(link, x):
         try:
             response = requests.get(link, stream=True)
             total_length = response.headers.get('content-length')
-            if total_length is None: # no content length header
+            if total_length is None:
                 f.write(response.content)
             else:
                 dl = 0
@@ -196,18 +208,50 @@ def download(link, x):
             print("\n[-] Não conectou ao site, verifique a conexão e execute o script novamente")
 
 
-for lesson, lessonData in lessons.items():
-    print(lesson)
-    if not os.path.isdir(f"./{lesson}"):
-        create_directory(f"./{lesson}")
-    for lessonName, link in lessonData.items():
-        if not os.path.exists(f"./{lesson}/{lessonName}.mp4"):
-            print(f"\n[+] Accessing {link}")
-            try:
-                r = requests.get(link, headers=headers, allow_redirects=True)
-            except ConnectionError:
-                print("\n[-] Não conectou ao site, verifique a conexão e execute o script novamente")
+         
 
-            html = r.content.decode('utf-8')
-            link_mp4 = parser(html)
-            download(link_mp4, f"./{lesson}/{lessonName}")
+             
+         
+
+def menu_video():
+    option = -1
+    while option not in range(0,4):
+        print("\n\nSelect Video Quality:\n0. 1080p\n1. 720p\n2. 540p\n3. 360p\n")
+        option = int(input("Option: "))
+    return option
+
+
+def menu_lessons():
+    x = 0
+    loption = -1
+    print("\n\nSelect Lesson: ")
+    for lesson, lessonData in lessons.items():
+        print(f"{x} - {lesson}")
+        x = x + 1
+    while loption not in range(0,x):
+        loption = int(input("Option: "))
+    return loption
+
+
+option = menu_video()
+loption = menu_lessons()
+x = 0
+
+
+for lesson, lessonData in lessons.items():
+    if x == loption:
+        print(f"\n\n{lesson}")
+        if not os.path.isdir(f"./{lesson}"):
+            create_directory(f"./{lesson}")
+        for lessonName, link in lessonData.items():
+            if not os.path.exists(f"./{lesson}/{lessonName}.mp4"):
+                print(f"\n[+] Acessing {link}")
+                try:
+                    r = requests.get(link, headers=headers, allow_redirects=True)
+                except ConnectionError:
+                    print("\n[-] Não conectou ao site, verifique a conexão e execute o script novamente")
+
+                html = r.content.decode('utf-8')
+                link_mp4 = parser(html, option)
+                download(link_mp4, f"./{lesson}/{lessonName}")
+    x = x + 1
