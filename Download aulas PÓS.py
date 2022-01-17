@@ -150,6 +150,31 @@ lessons = {
                 "Aula 6 Parte 2" : "https://player.vimeo.com/video/554664430?api=1&player_id=vimeoAula&autoplay=1",
                 "Aula 6 Parte 3" : "https://player.vimeo.com/video/554667061?api=1&player_id=vimeoAula&autoplay=1",
                 "Aula 6 Parte 4" : "https://player.vimeo.com/video/554661769?api=1&player_id=vimeoAula&autoplay=1"
+            },
+
+            "Inteligência de Negócio" : {
+                "Aula 1 Parte 1" : "https://player.vimeo.com/video/569930900?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 1 Parte 2" : "https://player.vimeo.com/video/569953801?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 1 Parte 3" : "https://player.vimeo.com/video/570004130?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 1 Parte 4" : "https://player.vimeo.com/video/570016512?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 2 Parte 1" : "https://player.vimeo.com/video/570025945?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 2 Parte 2" : "https://player.vimeo.com/video/570039712?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 2 Parte 3" : "https://player.vimeo.com/video/570104721?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 2 Parte 4" : "https://player.vimeo.com/video/570151014?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 3 Parte 1" : "https://player.vimeo.com/video/570515723?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 3 Parte 2" : "https://player.vimeo.com/video/570502002?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 4 Parte 1" : "https://player.vimeo.com/video/570525354?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 4 Parte 2" : "https://player.vimeo.com/video/570542221?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 4 Parte 3" : "https://player.vimeo.com/video/584111485?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 4 Parte 4" : "https://player.vimeo.com/video/570562983?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 5 Parte 1" : "https://player.vimeo.com/video/570566576?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 5 Parte 2" : "https://player.vimeo.com/video/570649711?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 5 Parte 3" : "https://player.vimeo.com/video/570658373?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 6 Parte 1" : "https://player.vimeo.com/video/570681867?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 6 Parte 2" : "https://player.vimeo.com/video/570696533?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 6 Parte 3" : "https://player.vimeo.com/video/570708176?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 6 Parte 4" : "https://player.vimeo.com/video/570731973?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 6 Parte 5" : "https://player.vimeo.com/video/570742985?api=1&player_id=vimeoAula&autoplay=1"
             }
         }
 
