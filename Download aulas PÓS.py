@@ -226,7 +226,8 @@ lessons = {
                 "Aula 6 Parte 1" : "https://player.vimeo.com/video/651320366?api=1&player_id=vimeoAula&autopause=0",
                 "Aula 6 Parte 2" : "https://player.vimeo.com/video/651334798?api=1&player_id=vimeoAula&autoplay=1",
                 "Aula 6 Parte 3" : "https://player.vimeo.com/video/651324817?api=1&player_id=vimeoAula&autoplay=1",
-                "Aula 6 Parte 4" : "https://player.vimeo.com/video/651329038?api=1&player_id=vimeoAula&autoplay=1"
+                "Aula 6 Parte 4" : "https://player.vimeo.com/video/651329038?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula Extra"     : "https://player.vimeo.com/video/691238482?api=1&player_id=vimeoAula&autopause=0"
             },
 
             "Deep Learning II Redes Neurais para Processamento de linguagem natual": {
@@ -254,7 +255,65 @@ lessons = {
                 "Aula 6 Parte 2" : "https://player.vimeo.com/video/656800864?api=1&player_id=vimeoAula&autoplay=1",
                 "Aula 6 Parte 3" : "https://player.vimeo.com/video/656814338?api=1&player_id=vimeoAula&autoplay=1",
                 "Aula 6 Parte 4" : "https://player.vimeo.com/video/656824250?api=1&player_id=vimeoAula&autoplay=1"
+            },
+
+            "Visualização de Dados": {
+                "Aula 1 Parte 1" : "https://player.vimeo.com/video/691238482?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 1 Parte 2" : "https://player.vimeo.com/video/666051963?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 1 Parte 3" : "https://player.vimeo.com/video/666078332?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 1 Parte 4" : "https://player.vimeo.com/video/666126562?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 2 Parte 1" : "https://player.vimeo.com/video/666200300?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 2 Parte 2" : "https://player.vimeo.com/video/666194883?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 2 Parte 3" : "https://player.vimeo.com/video/666184441?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 2 Parte 4" : "https://player.vimeo.com/video/666203985?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 3 Parte 1" : "https://player.vimeo.com/video/666131748?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 3 Parte 2" : "https://player.vimeo.com/video/666133221?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 4 Parte 1" : "https://player.vimeo.com/video/676494215?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 4 Parte 2" : "https://player.vimeo.com/video/676506328?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 4 Parte 3" : "https://player.vimeo.com/video/676510915?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 5 Parte 1" : "https://player.vimeo.com/video/666148916?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 5 Parte 2" : "https://player.vimeo.com/video/666156329?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 5 Parte 3" : "https://player.vimeo.com/video/666203685?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 5 Parte 4" : "https://player.vimeo.com/video/666207031?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 5 Parte 5" : "https://player.vimeo.com/video/666217145?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 6 Parte 1" : "https://player.vimeo.com/video/666219747?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 6 Parte 2" : "https://player.vimeo.com/video/666222540?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 6 Parte 3" : "https://player.vimeo.com/video/666227062?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 6 Parte 4" : "https://player.vimeo.com/video/666227638?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 7 Parte 1" : "https://player.vimeo.com/video/676574068?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 7 Parte 2" : "https://player.vimeo.com/video/676577337?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 7 Parte 3" : "https://player.vimeo.com/video/676578543?api=1&player_id=vimeoAula&autoplay=1"
+            },
+
+            "Machine Learning II Aprendizado não supervisionado": {
+
+                "Aula 1 Parte 1" : "https://player.vimeo.com/video/677878126?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 1 Parte 2" : "https://player.vimeo.com/video/677895120?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 1 Parte 3" : "https://player.vimeo.com/video/677931265?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 1 Parte 4" : "https://player.vimeo.com/video/677938934?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 2 Parte 1" : "https://player.vimeo.com/video/677969262?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 2 Parte 2" : "https://player.vimeo.com/video/677982200?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 2 Parte 3" : "https://player.vimeo.com/video/677998503?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 2 Parte 4" : "https://player.vimeo.com/video/678304089?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 3 Parte 1" : "https://player.vimeo.com/video/678153253?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 3 Parte 2" : "https://player.vimeo.com/video/690750615?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 3 Parte 3" : "https://player.vimeo.com/video/678163047?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 3 Parte 4" : "https://player.vimeo.com/video/678166988?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 4 Parte 1" : "https://player.vimeo.com/video/679288371?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 4 Parte 2" : "https://player.vimeo.com/video/679342517?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 4 Parte 3" : "https://player.vimeo.com/video/679344006?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 4 Parte 4" : "https://player.vimeo.com/video/679345023?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 5 Parte 1" : "https://player.vimeo.com/video/679773978?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 5 Parte 2" : "https://player.vimeo.com/video/679392396?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 5 Parte 3" : "https://player.vimeo.com/video/679393194?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 5 Parte 4" : "https://player.vimeo.com/video/679505358?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 6 Parte 1" : "https://player.vimeo.com/video/679558746?api=1&player_id=vimeoAula&autopause=0",
+                "Aula 6 Parte 2" : "https://player.vimeo.com/video/679559351?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 6 Parte 3" : "https://player.vimeo.com/video/679559896?api=1&player_id=vimeoAula&autoplay=1",
+                "Aula 6 Parte 4" : "https://player.vimeo.com/video/679560611?api=1&player_id=vimeoAula&autoplay=1"
             }
+
+
         }
 
 
