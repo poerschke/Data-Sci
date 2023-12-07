@@ -336,11 +336,12 @@ def create_directory(dirName):
 
 def parser(input, option):
     
-    regex = r'.+"url":"(.+?)","cdn":"akamai_interconnect","quality":"(.+?)",.+'
+    regex = r'"profile":"\d+","width":\d+,"height":\d+,"mime":"video/mp4","fps":\d+\.\d+,"url":"(https.+?)","cdn":"akamai_interconnect","quality":"(.+?)",'
     matches = re.finditer(regex, input)
     for matchNum, match in enumerate(matches, start=1):
-        return match.group(1)
-    
+        if match.group(2) == option:
+            return match.group(1)
+
 
 
 
@@ -375,9 +376,9 @@ def download(link, x):
 
 def menu_video():
     option = -1
-    op = ['1080p', '720p', '540p', '360p']
-    while option not in range(0,4):
-        print("\n\nSelect Video Quality:\n0. 1080p\n1. 720p\n2. 540p\n3. 360p\n")
+    op = ['1080p', '720p', '540p', '360p', '240p']
+    while option not in range(0,5):
+        print("\n\nSelect Video Quality:\n0. 1080p\n1. 720p\n2. 540p\n3. 360p\n4. 240p\n")
         option = int(input("Option: "))
         
     return op[option]
