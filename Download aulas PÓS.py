@@ -335,26 +335,23 @@ def create_directory(dirName):
 
 
 def parser(input, option):
-    regex = [
-            r"\"profile\":\".+\",\"width\":1920,\"mime\":\"video\/mp4\",\"fps\":.+,\"url\":\"(.+?)\",\"cdn\":\"akamai_interconnect\",\"quality\":\"1080p\",\"id\":\".+\",\"origin\":\"gcs\",\"height\":1080",
-            r"\"profile\":\".+\",\"width\":1280,\"mime\":\"video\/mp4\",\"fps\":.+,\"url\":\"(.+?)\",\"cdn\":\"akamai_interconnect\",\"quality\":\"720p\",\"id\":\".+\",\"origin\":\"gcs\",\"height\":720",
-            r"\"profile\":\".+\",\"width\":960,\"mime\":\"video\/mp4\",\"fps\":.+,\"url\":\"(.+?)\",\"cdn\":\"akamai_interconnect\",\"quality\":\"540p\",\"id\":\".+\",\"origin\":\"gcs\",\"height\":540",
-            r"\"profile\":\".+\",\"width\":640,\"mime\":\"video\/mp4\",\"fps\":.+,\"url\":\"(.+?)\",\"cdn\":\"akamai_interconnect\",\"quality\":\"360p\",\"id\":\".+\",\"origin\":\"gcs\",\"height\":360"
-    ]
-    matches = re.finditer(regex[option], input)
-    for matchNum, match in enumerate(matches, start=0):
+    
+    regex = r'.+"url":"(.+?)","cdn":"akamai_interconnect","quality":"(.+?)",.+'
+    matches = re.finditer(regex, input)
+    for matchNum, match in enumerate(matches, start=1):
         return match.group(1)
-
+    
 
 
 
 
 def download(link, x):
+    print(link)
     file_name = f"{x}.mp4"
     with open(file_name, "wb") as f:
         print("Downloading %s" % file_name)
         try:
-            response = requests.get(link, stream=True)
+            response = requests.get(link, stream=True, headers=headers)
             total_length = response.headers.get('content-length')
             if total_length is None:
                 f.write(response.content)
@@ -378,10 +375,12 @@ def download(link, x):
 
 def menu_video():
     option = -1
+    op = ['1080p', '720p', '540p', '360p']
     while option not in range(0,4):
         print("\n\nSelect Video Quality:\n0. 1080p\n1. 720p\n2. 540p\n3. 360p\n")
         option = int(input("Option: "))
-    return option
+        
+    return op[option]
 
 
 def menu_lessons():
@@ -410,11 +409,11 @@ for lesson, lessonData in lessons.items():
             if not os.path.exists(f"./{lesson}/{lessonName}.mp4"):
                 print(f"\n[+] Accessing {link}")
                 try:
-                    r = requests.get(link, headers=headers, allow_redirects=True)
+                    r = requests.get(link, headers=headers, allow_redirects=True).text
                 except ConnectionError:
                     print("\n[-] Não conectou ao site, verifique a conexão e execute o script novamente")
 
-                html = r.content.decode('utf-8')
+                html = r
                 link_mp4 = parser(html, option)
                 download(link_mp4, f"./{lesson}/{lessonName}")
     x = x + 1
